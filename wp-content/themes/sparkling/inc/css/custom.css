@@ -1,0 +1,99 @@
+.features .icontext {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  margin-left: -31px;
+  padding: 15px;
+  height: 62px;
+  width: 62px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.fa-circle {font-size:4px; line-height:21px; vertical-align: middle; padding:0 5px;}
+
+.features.p {
+ margin: 0 0 0 0;
+}
+
+.features-container {
+ display: inline-block;
+}
+
+
+.loaded {
+    position: relative;
+    text-align: center;
+   padding: 5px 5px 5px 5px;
+    margin-top: 24px;
+    max-width: 400px;
+    color:#6B6B7A;
+    height: 220px;
+    box-shadow: 0px 0px 1em rgba(0, 0, 0, 0.5);
+    transition: all 0.7s linear 0s;
+    border-radius: 5px;
+   background-color: #FFF;
+
+}
+
+.loaded h3 {
+   margin-top: 30px;
+}
+
+
+.icontext {
+       color:#FFFFFF;
+        background-color: #5B4D37;
+        background-image: -moz-linear-gradient(top,#44ad44,#292929);
+        background-image: -webkit-gradient(linear,0 0,0 100%,from(#44ad44),to(#292929));
+        background-image: -webkit-linear-gradient(top,#44ad44,#292929);
+        background-image: -o-linear-gradient(top,#44ad44,#292929);
+        background-image: linear-gradient(to bottom,#44ad44,#292929);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#44ad44', endColorstr='#292929', GradientType=0);
+        border-color: #F1CA7F #F1CA7F #39859F;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    }
+
+.col-sm-4 {
+    min-width: 33%;
+}
+
+
+.imageWrapper {
+    overflow: hidden;
+    background: none repeat scroll 0% 0% #000;
+    display: block;
+}
+.container {
+ padding: 1px;
+}
+
+flex-caption {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
+    padding: 0px 0px;
+    display: inline-block;
+    max-width: 1170px;
+    margin: auto;
+    bottom: 60px;
+}
+
+
+.col-md-6 { 
+  width: 50%;
+}
+
+.social-footer { 
+  width: 25%;
+}
+
+
+
+

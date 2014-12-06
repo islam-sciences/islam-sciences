@@ -233,6 +233,8 @@ function sparkling_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+   // Custom islam-sciences
+   wp_enqueue_style( 'custom-css', get_template_directory_uri().'/inc/css/custom.css' );
 }
 add_action( 'wp_enqueue_scripts', 'sparkling_scripts' );
 

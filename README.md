@@ -1,2 +1,2 @@
-islam-sciences
+Islam-Sciences
 ==============

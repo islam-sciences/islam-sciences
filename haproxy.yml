@@ -1,0 +1,68 @@
+- hosts: loadbalancers
+  connection: local
+
+#  tasks:
+ #   - include: haproxy/defaults/main.yml
+
+  roles:
+     - role: haproxy
+       haproxy_defaults:
+         mode: 'http'
+         timeout:
+           - param: 'connect'
+             value: 5000
+           - param: 'server'
+             value: 5000
+           - param: 'client'
+             value: 5000
+
+       haproxy_frontends:
+       - name: 'http-in'
+         port: '80'
+         maxconn: '1000'
+         default_backend: 'be_default'
+         acl:
+           - name: 'host_header_is_akram.dev.islam-sciences.com'
+             condition: 'hdr(host) -i akram.dev.islam-sciences.com'
+           - name: 'host_header_is_imad.dev.islam-sciences.com'
+             condition: 'hdr(host) -i imad.dev.islam-sciences.com'
+           - name: 'host_header_is_dounde.dev.islam-sciences.com'
+             condition: 'hdr(host) -i dounde.dev.islam-sciences.com'
+           - name: 'host_header_is_nourredine.dev.islam-sciences.com'
+             condition: 'hdr(host) -i nourredine.dev.islam-sciences.com'
+         use_backend:
+            - name: 'be_akram.dev.islam-sciences.com'
+              condition: 'if host_header_is_akram.dev.islam-sciences.com'
+            - name: 'be_imad.dev.islam-sciences.com'
+              condition: 'if host_header_is_imad.dev.islam-sciences.com'
+            - name: 'be_dounde.dev.islam-sciences.com'
+              condition: 'if host_header_is_dounde.dev.islam-sciences.com'
+            - name: 'be_nourredine.dev.islam-sciences.com'
+              condition: 'if host_header_is_nourredine.dev.islam-sciences.com'
+
+       haproxy_backends:
+          - name: 'be_default'
+            servers:
+              - name: 'www'
+                ip: '127.0.0.1'
+                port: 8080
+          - name: 'be_akram.dev.islam-sciences.com'
+            servers:
+              - name: node1_akram
+                ip: 127.0.0.1
+                port: 1080
+          - name: 'be_imad.dev.islam-sciences.com'
+            servers:
+              - name: node1_imad
+                ip: 127.0.0.1
+                port: 2080
+          - name: 'be_dounde.dev.islam-sciences.com'
+            servers:
+              - name: node1_dounde
+                ip: 127.0.0.1
+                port: 3080
+          - name: 'be_nourredine.dev.islam-sciences.com'
+            servers:
+              - name: node1_nourredine
+                ip: 127.0.0.1
+                port: 4080
